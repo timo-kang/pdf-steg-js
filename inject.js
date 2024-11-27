@@ -36,7 +36,6 @@ function injectDataIntoPDF(inputPdfPath, outputPdfPath, hiddenData) {
 // Example usage
 const inputPdf = 'input_uncompressed.pdf'; // Path to the uncompressed PDF
 const outputPdf = 'output_with_hidden_data.pdf'; // Path to the modified PDF
-//const hiddenMessage = "ThisIsAHiddenMessageThatIsVeryLongAndNeedsToBeSplitIntoChunks"; // Data to hide
-const hiddenMessage = "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+const hiddenMessage = "ThisIsAHiddenMessageThatIsVeryLongAndNeedsToBeSplitIntoChunks"; // Data to hide
 injectDataIntoPDF(inputPdf, outputPdf, hiddenMessage);
 
