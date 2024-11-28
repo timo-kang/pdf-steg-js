@@ -89,3 +89,7 @@ Ensure the PDF is uncompressed before performing any operations. Use tools like 
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Reference
+
+I refered this [paper(Ryan Klemm and Bo Chen)](https://arxiv.org/html/2405.00865v1) about the strategy on how to inject the data in PDF document.
