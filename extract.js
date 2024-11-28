@@ -14,13 +14,14 @@ function extractHiddenData(inputPdfPath) {
     let hiddenDataList = [];
 
     textObjects.forEach(textObject => {
-        // Regex to find all data in TJ operators
-        const hiddenDataMatches = textObject.match(/\((.*?)\)\s*Tj/g);
-        if (hiddenDataMatches) {
-            hiddenDataMatches.forEach(match => {
-                // Extract the content inside parentheses
-                const hiddenData = match.match(/\((.*?)\)/)[1];
-                hiddenDataList.push(hiddenData);
+        // Extract all potential strings within parentheses
+        const matches = textObject.match(/\(([^)]*?)\) Tj/g);
+        if (matches) {
+            matches.forEach(match => {
+                // Clean up the extracted data
+                let extractedText = match.replace(/^\(|\)$/g, ''); // Remove parentheses
+		extractedText = extractedText.replace('\) Tj', '');
+                hiddenDataList.push(extractedText);
             });
         }
     });
